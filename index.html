@@ -14,205 +14,141 @@
             --danum-accent: #10b981;
         }
 
-        /* SKELETON LOADING PREMIUM */
-        #skeleton-screen {
+        /* LOADING SCREEN */
+        #loader {
             position: fixed;
             inset: 0;
             background: #0a2538;
-            z-index: 9999;
             display: flex;
             flex-direction: column;
-            transition: opacity 0.6s ease, visibility 0.6s;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
         }
-
-        .skeleton-shimmer {
-            background: linear-gradient(90deg, #0f344e 25%, #16425b 50%, #0f344e 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 8px;
+        .loader-circle {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(16, 185, 129, 0.1);
+            border-left-color: #10b981;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
-        @keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        /* Navbar Scrolled State */
+        /* NAVBAR SCROLLED STATE */
         .nav-transition {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .nav-scrolled {
             height: 65px !important;
             background-color: rgba(10, 37, 56, 0.95) !important;
-            backdrop-blur: 10px;
+            backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
             border-bottom: 1px solid rgba(16, 185, 129, 0.3);
         }
 
-        /* Animasi Judul Section */
-        .section-title {
-            transition: all 0.5s ease;
+        /* ANIMASI JUDUL SECTION & HOVER */
+        .reveal-title {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
             cursor: default;
         }
-        .section-title:hover {
-            transform: scale(1.05);
-            color: #10b981;
-            text-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+        .reveal-title.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-title:hover {
+            color: #10b981 !important;
+            transform: scale(1.05) translateY(-5px);
+            text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
         }
 
-        /* Animasi Awal Masuk */
+        /* Animasi Hero */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        .reveal-anim {
-            animation: fadeInUp 1s ease-out forwards;
-        }
-
-        .animate-hero { opacity: 0; animation: fadeInUp 1.2s ease-out forwards; }
+        .animate-hero { opacity: 0; animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
         .delay-1 { animation-delay: 0.3s; }
         .delay-2 { animation-delay: 0.6s; }
-
-        /* Efek Hover Card */
-        .hover-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .hover-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border-color: rgba(16, 185, 129, 0.4);
-        }
 
         .animated-line {
             stroke-dasharray: 1000;
             stroke-dashoffset: 2000;
             animation: lineFlow 10s linear infinite;
+            filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
         }
-        @keyframes lineFlow {
-            0% { stroke-dashoffset: 2000; }
-            100% { stroke-dashoffset: 0; }
-        }
+        @keyframes lineFlow { 0% { stroke-dashoffset: 2000; } 100% { stroke-dashoffset: 0; } }
 
-        @media (max-width: 640px) {
-            .mobile-table-text { font-size: 8px !important; padding: 4px !important; }
-            .mobile-label-text { font-size: 7px !important; }
-        }
+        .hover-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .hover-card:hover { transform: translateY(-12px); border-color: rgba(16, 185, 129, 0.4); background: rgba(255, 255, 255, 0.07); }
 
-        #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 100;
-        }
+        #backToTop { display: none; position: fixed; bottom: 30px; right: 30px; z-index: 100; }
     </style>
 </head>
-<body class="bg-[#0a2538] text-slate-100 font-sans antialiased">
+<body class="bg-[#0a2538] text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
 
-    <div id="skeleton-screen">
-        <div class="h-20 px-6 flex items-center justify-between border-b border-white/5">
-            <div class="flex items-center gap-3">
-                <div class="skeleton-shimmer h-10 w-10"></div>
-                <div class="skeleton-shimmer h-6 w-32"></div>
-            </div>
-            <div class="flex gap-6">
-                <div class="skeleton-shimmer h-4 w-20 hidden md:block"></div>
-                <div class="skeleton-shimmer h-4 w-20 hidden md:block"></div>
-                <div class="skeleton-shimmer h-10 w-24"></div>
-            </div>
-        </div>
-        <div class="flex-1 flex flex-col items-center justify-center px-6 gap-6">
-            <div class="skeleton-shimmer h-6 w-48 rounded-full"></div>
-            <div class="skeleton-shimmer h-24 w-full max-w-2xl"></div>
-            <div class="skeleton-shimmer h-12 w-full max-w-md"></div>
-            <div class="skeleton-shimmer h-16 w-48 mt-8"></div>
-        </div>
+    <div id="loader">
+        <div class="loader-circle"></div>
+        <p class="mt-4 text-emerald-400 font-bold tracking-widest text-xs uppercase animate-pulse">Initializing ManRisk...</p>
     </div>
 
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="backToTop" class="bg-emerald-600 text-white w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-90 border border-white/10">
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="backToTop" class="bg-emerald-600 hover:bg-emerald-500 text-white w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-90 border border-white/10">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <header id="mainNav" class="fixed top-0 w-full h-20 flex items-center z-50 nav-transition">
+    <header id="mainNav" class="fixed top-0 w-full bg-transparent h-20 flex items-center z-50 nav-transition border-b border-transparent">
         <div class="max-w-7xl mx-auto px-6 w-full flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3">
+            <a href="#" class="flex items-center gap-3 group">
                 <img src="danumtaka.png" alt="Logo" class="w-10 h-10 sm:w-12 sm:h-12 object-contain">
                 <div class="flex flex-col">
-                    <span class="text-xl font-extrabold text-white leading-none">ManRisk</span>
-                    <span class="text-[10px] text-emerald-400 font-bold uppercase">Danum Taka Safety</span>
+                    <span class="text-xl font-extrabold tracking-tight text-white leading-none">ManRisk</span>
+                    <span class="text-[10px] text-emerald-400 font-bold tracking-widest uppercase">Danum Taka Safety</span>
                 </div>
             </a>
+            
             <div class="flex items-center gap-10">
                 <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
                     <a href="#fitur" class="hover:text-emerald-400 transition">Fitur Utama</a>
                     <a href="#matriks" class="hover:text-emerald-400 transition">Matriks Risiko</a>
                     <a href="#updates" class="hover:text-emerald-400 transition">Latest Updates</a>
                 </nav>
-                <a href="#" class="bg-emerald-600 text-white font-bold text-sm px-6 py-2 rounded-lg transition hover:scale-[1.02]">Login</a>
+                <a href="#" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-2.5 rounded-lg transition hover:scale-[1.02]">Login</a>
             </div>
         </div>
     </header>
 
     <section class="relative pt-48 pb-32 overflow-hidden flex items-center justify-center min-h-[90vh]">
-        <div class="absolute inset-0 -z-10 overflow-hidden">
+        <div class="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none overflow-hidden">
             <svg width="100%" height="100%" viewBox="0 0 1440 400" preserveAspectRatio="none">
-                <path class="animated-line" d="M-100,250 C100,150 200,350 400,200 C600,50 800,380 1000,150 C1200,50 1400,300 1600,200" stroke="rgba(16, 185, 129, 0.2)" stroke-width="4" fill="transparent" />
+                <path class="animated-line" d="M-100,250 C100,150 200,350 400,200 C600,50 800,380 1000,150 C1200,50 1400,300 1600,200" stroke="rgba(16, 185, 129, 0.3)" stroke-width="4" fill="transparent" />
             </svg>
         </div>
         <div class="max-w-5xl mx-auto px-6 text-center">
             <div class="animate-hero"><span class="px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6 inline-block">Official Enterprise Platform</span></div>
-            <h1 class="animate-hero delay-1 text-6xl sm:text-8xl font-black text-white mb-8 leading-[0.9]">SISTEM <br><span class="text-transparent bg-clip-text bg-gradient-to-b from-emerald-300 to-emerald-600 uppercase">Manajemen Risiko</span></h1>
-            <p class="animate-hero delay-2 text-slate-400 text-lg sm:text-2xl max-w-2xl mx-auto font-light leading-relaxed mb-12">Digitalisasi mitigasi risiko operasional pada <span class="text-white font-medium">Perumda Air Minum Danum Taka</span> dengan standar enterprise.</p>
+            <h1 class="animate-hero delay-1 text-6xl sm:text-8xl font-black tracking-tighter text-white mb-8 leading-[0.9]">SISTEM <br><span class="text-transparent bg-clip-text bg-gradient-to-b from-emerald-300 to-emerald-600">MANAJEMEN RISIKO</span></h1>
+            <p class="animate-hero delay-2 text-slate-400 text-lg sm:text-2xl max-w-2xl mx-auto font-light leading-relaxed mb-12">Digitalisasi mitigasi risiko operasional pada <span class="text-white font-medium">Perumda Air Minum Danum Taka</span>.</p>
             <div class="animate-hero delay-2 flex justify-center">
-                <a href="#" class="group relative px-10 py-5 bg-emerald-600 text-white font-bold rounded-2xl transition-all hover:scale-105 shadow-xl shadow-emerald-900/40">Masuk Dashboard <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-2 ml-2"></i></a>
+                <a href="#" class="group relative px-10 py-5 bg-emerald-600 text-white font-bold rounded-2xl transition-all hover:scale-105 shadow-xl shadow-emerald-900/40">Masuk Dashboard <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i></a>
             </div>
         </div>
     </section>
 
     <section id="matriks" class="py-20 bg-[#081d2c]">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col items-center text-center mb-12 reveal-anim">
-                <h2 class="text-3xl font-bold text-white section-title uppercase tracking-tight">Matriks Penilaian Risiko</h2>
-                <div class="w-20 h-1 bg-emerald-500 mt-4 rounded-full"></div>
+            <div class="flex flex-col items-center text-center mb-12">
+                <h2 class="text-3xl font-bold text-white reveal-title uppercase">Matriks Penilaian Risiko</h2>
+                <div class="w-20 h-1 bg-emerald-500 mt-4 rounded-full mx-auto"></div>
             </div>
-            <div class="overflow-hidden rounded-2xl border border-white/5 shadow-2xl hover-card bg-slate-900/40">
+            <div class="overflow-hidden rounded-2xl border border-white/5 shadow-2xl hover-card text-shadow-sm">
                 <table class="w-full text-[10px] sm:text-xs text-center border-collapse">
                     <thead>
-                        <tr class="bg-white/5 text-slate-300 uppercase font-bold">
-                            <th class="p-4 border border-white/10 italic">Dampak / Peluang</th>
-                            <th class="p-4 border border-white/10 uppercase">Jarang (1)</th>
-                            <th class="p-4 border border-white/10 uppercase">Kecil (2)</th>
-                            <th class="p-4 border border-white/10 uppercase">Sedang (3)</th>
-                            <th class="p-4 border border-white/10 uppercase">Besar (4)</th>
-                            <th class="p-4 border border-white/10 uppercase">Pasti (5)</th>
-                        </tr>
+                        <tr class="bg-white/5 text-slate-300 font-bold"><th class="p-5 border border-white/10 italic">Dampak / Peluang</th><th class="p-5 border border-white/10">Jarang (1)</th><th class="p-5 border border-white/10">Kecil (2)</th><th class="p-5 border border-white/10">Sedang (3)</th><th class="p-5 border border-white/10">Besar (4)</th><th class="p-5 border border-white/10">Pasti (5)</th></tr>
                     </thead>
                     <tbody class="font-bold text-white">
-                        <tr>
-                            <td class="p-4 bg-white/5 border border-white/10 text-left uppercase mobile-table-text">Dahsyat (5)</td>
-                            <td class="p-4 bg-rose-600 border border-white/10 mobile-table-text">9<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
-                            <td class="p-4 bg-rose-600 border border-white/10 mobile-table-text">15<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
-                            <td class="p-4 bg-rose-600 border border-white/10 mobile-table-text">18<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
-                            <td class="p-4 bg-rose-600 border border-white/10 mobile-table-text">23<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
-                            <td class="p-4 bg-rose-600 border border-white/10 mobile-table-text">25<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 bg-white/5 border border-white/10 text-left uppercase mobile-table-text">Besar (4)</td>
-                            <td class="p-4 bg-orange-500 border border-white/10 mobile-table-text">6<br><span class="mobile-label-text font-light">TINGGI</span></td>
-                            <td class="p-4 bg-orange-500 border border-white/10 mobile-table-text">12<br><span class="mobile-label-text font-light">TINGGI</span></td>
-                            <td class="p-4 bg-orange-500 border border-white/10 mobile-table-text">16<br><span class="mobile-label-text font-light">TINGGI</span></td>
-                            <td class="p-4 bg-rose-600 border border-white/10 mobile-table-text">20<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
-                            <td class="p-4 bg-rose-600 border border-white/10 mobile-table-text">24<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 bg-white/5 border border-white/10 text-left uppercase mobile-table-text">Sedang (3)</td>
-                            <td class="p-4 bg-yellow-400 text-slate-900 border border-white/10 mobile-table-text">4<br><span class="mobile-label-text">MODERATE</span></td>
-                            <td class="p-4 bg-yellow-400 text-slate-900 border border-white/10 mobile-table-text">10<br><span class="mobile-label-text">MODERATE</span></td>
-                            <td class="p-4 bg-orange-500 border border-white/10 mobile-table-text">14<br><span class="mobile-label-text">TINGGI</span></td>
-                            <td class="p-4 bg-orange-500 border border-white/10 mobile-table-text">19<br><span class="mobile-label-text">TINGGI</span></td>
-                            <td class="p-4 bg-rose-600 border border-white/10 mobile-table-text">22<br><span class="mobile-label-text">EKSTRIM</span></td>
-                        </tr>
+                        <tr><td class="p-5 bg-white/5 border border-white/10 text-left">Dahsyat (5)</td><td class="p-5 bg-rose-600 border border-white/10">9<br><span class="text-[9px] font-light">EKSTRIM</span></td><td class="p-5 bg-rose-600 border border-white/10">15<br><span class="text-[9px] font-light">EKSTRIM</span></td><td class="p-5 bg-rose-600 border border-white/10">18<br><span class="text-[9px] font-light">EKSTRIM</span></td><td class="p-5 bg-rose-600 border border-white/10">23<br><span class="text-[9px] font-light">EKSTRIM</span></td><td class="p-5 bg-rose-600 border border-white/10">25<br><span class="text-[9px] font-light">EKSTRIM</span></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -220,94 +156,68 @@
     </section>
 
     <section id="fitur" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16 reveal-anim">
-            <h2 class="text-3xl font-bold text-white section-title uppercase tracking-tight">Digitalisasi Mitigasi Risiko</h2>
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-white reveal-title uppercase">Digitalisasi Mitigasi Risiko</h2>
             <div class="w-16 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white/5 p-10 rounded-2xl border border-white/5 hover-card">
-                <i class="fa-solid fa-file-shield text-emerald-400 text-3xl mb-6"></i>
-                <h3 class="text-xl font-bold text-white mb-3">Pencatatan Real-time</h3>
-                <p class="text-slate-400 text-sm">Identifikasi risiko di lapangan dan laporkan langsung melalui sistem cloud yang aman.</p>
-            </div>
-            <div class="bg-white/5 p-10 rounded-2xl border border-white/5 hover-card">
-                <i class="fa-solid fa-clipboard-check text-teal-400 text-3xl mb-6"></i>
-                <h3 class="text-xl font-bold text-white mb-3">Audit Transparan</h3>
-                <p class="text-slate-400 text-sm">Seluruh riwayat perubahan data terekam otomatis untuk kebutuhan transparansi audit.</p>
-            </div>
-            <div class="bg-white/5 p-10 rounded-2xl border border-white/5 hover-card">
-                <i class="fa-solid fa-chart-pie text-blue-400 text-3xl mb-6"></i>
-                <h3 class="text-xl font-bold text-white mb-3">Visualisasi Data</h3>
-                <p class="text-slate-400 text-sm">Dashboard interaktif memudahkan direksi mengambil keputusan mitigasi yang tepat.</p>
-            </div>
+            <div class="bg-white/5 p-10 rounded-2xl border border-white/5 hover-card text-center"><i class="fa-solid fa-file-shield text-emerald-400 text-3xl mb-6"></i><h3 class="text-xl font-bold text-white mb-3">Pencatatan Real-time</h3><p class="text-slate-400 text-sm">Identifikasi risiko di lapangan secara langsung.</p></div>
+            <div class="bg-white/5 p-10 rounded-2xl border border-white/5 hover-card text-center"><i class="fa-solid fa-clipboard-check text-teal-400 text-3xl mb-6"></i><h3 class="text-xl font-bold text-white mb-3">Audit Transparan</h3><p class="text-slate-400 text-sm">Riwayat perubahan data terekam otomatis.</p></div>
+            <div class="bg-white/5 p-10 rounded-2xl border border-white/5 hover-card text-center"><i class="fa-solid fa-chart-pie text-blue-400 text-3xl mb-6"></i><h3 class="text-xl font-bold text-white mb-3">Visualisasi Data</h3><p class="text-slate-400 text-sm">Dashboard interaktif untuk pengambilan keputusan.</p></div>
         </div>
     </section>
 
     <section id="updates" class="py-24 bg-[#081d2c]/50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col items-center text-center mb-16 reveal-anim">
-                <h2 class="text-3xl font-bold text-white section-title uppercase tracking-tight">Latest Updates</h2>
-                <div class="w-16 h-1 bg-emerald-500 mt-4 rounded-full"></div>
+            <div class="flex flex-col items-center text-center mb-16">
+                <h2 class="text-3xl font-bold text-white reveal-title uppercase">Latest Updates</h2>
+                <div class="w-16 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover-card">
-                    <span class="text-emerald-400 text-xs font-bold bg-emerald-400/10 px-3 py-1 rounded-full uppercase">v2.4.0</span>
-                    <h4 class="text-white font-bold mt-4">Integrasi WhatsApp Gateway</h4>
-                    <p class="text-slate-400 text-sm mt-2">Notifikasi mitigasi kini dikirim langsung ke WhatsApp penanggung jawab divisi.</p>
-                    <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold">12 Mei 2026</p>
-                </div>
-                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover-card">
-                    <span class="text-blue-400 text-xs font-bold bg-blue-400/10 px-3 py-1 rounded-full uppercase">Update</span>
-                    <h4 class="text-white font-bold mt-4">Dashboard Analytics v2</h4>
-                    <p class="text-slate-400 text-sm mt-2">Visualisasi Heatmap risiko kini mendukung filter per-unit lapangan.</p>
-                    <p class="text-slate-500 text-[10px] mt-4 uppercase font-bold">05 Mei 2026</p>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover-card"><span class="text-emerald-400 text-xs font-bold bg-emerald-400/10 px-3 py-1 rounded-full uppercase">v2.4.0</span><h4 class="text-white font-bold mt-4">Integrasi WhatsApp Gateway</h4><p class="text-slate-400 text-sm mt-2">Notifikasi otomatis ke penanggung jawab divisi.</p></div>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover-card"><span class="text-blue-400 text-xs font-bold bg-blue-400/10 px-3 py-1 rounded-full uppercase">Update</span><h4 class="text-white font-bold mt-4">Dashboard Analytics v2</h4><p class="text-slate-400 text-sm mt-2">Visualisasi Heatmap risiko kini lebih detail.</p></div>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover-card"><span class="text-purple-400 text-xs font-bold bg-purple-400/10 px-3 py-1 rounded-full uppercase">System</span><h4 class="text-white font-bold mt-4">Peningkatan Keamanan SSL</h4><p class="text-slate-400 text-sm mt-2">Pembaruan enkripsi perlindungan data register.</p></div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#071d2c] py-20 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 text-center md:text-left">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                <div class="space-y-6">
-                    <div class="flex items-center gap-3 justify-center md:justify-start">
-                        <img src="danumtaka.png" alt="Logo" class="w-12 h-12">
-                        <span class="text-2xl font-bold text-white tracking-tight">ManRisk</span>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed">Platform manajemen risiko untuk resiliensi operasional Perumda Air Minum Danum Taka.</p>
-                </div>
-                <div class="space-y-6">
-                    <h3 class="text-white font-bold text-sm uppercase tracking-widest text-emerald-500">Hubungi Kami</h3>
-                    <div class="flex gap-4 justify-center md:justify-start">
-                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 transition-all"><i class="fa-brands fa-whatsapp text-xl"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-white/5 pt-8 text-center text-slate-500 text-[10px] uppercase font-bold">
-                <p>&copy; 2026 Perumda Air Minum Danum Taka. All Rights Reserved.</p>
-            </div>
+    <footer class="bg-[#071d2c] pt-20 pb-10 border-t border-white/5 text-center">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+            <img src="danumtaka.png" alt="Logo" class="w-12 h-12 mb-4">
+            <h2 class="text-2xl font-bold text-white mb-6 tracking-tight">ManRisk</h2>
+            <p class="text-slate-500 text-[10px] tracking-widest uppercase mb-4">&copy; 2026 Perumda Air Minum Danum Taka. Seluruh Hak Cipta Dilindungi.</p>
         </div>
     </footer>
 
     <script>
+        // LOADING SCREEN LOGIC
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.visibility = 'hidden'; }, 800);
+        });
+
+        // NAVBAR & BACK TO TOP LOGIC
         const btt = document.getElementById("backToTop");
         const nav = document.getElementById("mainNav");
-
-        window.addEventListener('load', () => {
-            const skeleton = document.getElementById('skeleton-screen');
-            skeleton.style.opacity = '0';
-            setTimeout(() => { skeleton.style.visibility = 'hidden'; }, 600);
-        });
 
         window.onscroll = function() {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 btt.style.display = "flex";
             } else { btt.style.display = "none"; }
 
-            if (window.scrollY > 50) { nav.classList.add("nav-scrolled"); } 
+            if (window.scrollY > 50) { nav.classList.add("nav-scrolled"); }
             else { nav.classList.remove("nav-scrolled"); }
         };
+
+        // REVEAL ANIMATION ON SCROLL
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('active'); }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-title').forEach(title => observer.observe(title));
     </script>
 </body>
 </html>
