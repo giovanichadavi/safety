@@ -37,6 +37,17 @@
             border-color: rgba(16, 185, 129, 0.5);
             background: rgba(255, 255, 255, 0.08);
         }
+
+        /* Perbaikan Tabel Mobile agar terlihat semua */
+        @media (max-width: 640px) {
+            .mobile-table-text {
+                font-size: 8px !important;
+                padding: 4px !important;
+            }
+            .mobile-label-text {
+                font-size: 7px !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-[#0a2538] text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
@@ -76,8 +87,8 @@
             </div>
             
             <h1 class="opacity-0 animate-hero delay-1 text-6xl sm:text-8xl font-black tracking-tighter text-white mb-8 leading-[0.9]">
-                STRATEGIC <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-b from-emerald-300 to-emerald-600">RISK CONTROL</span>
+                SISTEM <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-b from-emerald-300 to-emerald-600">MANAJEMEN RISIKO</span>
             </h1>
             
             <p class="opacity-0 animate-hero delay-2 text-slate-400 text-lg sm:text-2xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
@@ -85,11 +96,11 @@
             </p>
             
             <div class="opacity-0 animate-hero delay-2 flex justify-center">
-                <a href="#" class="group relative px-10 py-5 bg-white text-[#0a2538] font-bold rounded-2xl overflow-hidden transition-all hover:scale-105 active:scale-95">
+                <a href="#" class="group relative px-10 py-5 bg-emerald-600 text-white font-bold rounded-2xl overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-xl shadow-emerald-900/40">
                     <span class="relative z-10 flex items-center gap-3">
                         Masuk Dashboard <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-2"></i>
                     </span>
-                    <div class="absolute inset-0 bg-emerald-400 translate-y-full transition-transform group-hover:translate-y-0"></div>
+                    <div class="absolute inset-0 bg-emerald-500 translate-y-full transition-transform group-hover:translate-y-0"></div>
                 </a>
             </div>
         </div>
@@ -97,65 +108,65 @@
 
     <section id="matriks" class="py-20 bg-[#081d2c]">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
+            <div class="flex flex-col items-center text-center mb-12">
                 <h2 class="text-3xl font-bold text-white flex items-center justify-center gap-3">
                     <i class="fa-solid fa-table-cells text-emerald-400"></i> Matriks Penilaian Risiko
                 </h2>
-                <div class="w-20 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+                <div class="w-20 h-1 bg-emerald-500 mt-4 rounded-full"></div>
             </div>
 
-            <div class="overflow-x-auto rounded-2xl border border-white/5 shadow-2xl hover-card cursor-default">
-                <table class="w-full text-[11px] sm:text-xs text-center border-collapse">
+            <div class="overflow-hidden rounded-2xl border border-white/5 shadow-2xl hover-card cursor-default">
+                <table class="w-full text-[10px] sm:text-xs text-center border-collapse">
                     <thead>
                         <tr class="bg-white/5 text-slate-300 uppercase tracking-wider font-bold">
-                            <th class="p-5 border border-white/10 italic text-[10px]">Dampak / Peluang</th>
-                            <th class="p-5 border border-white/10 uppercase">Jarang (1)</th>
-                            <th class="p-5 border border-white/10 uppercase">Kecil (2)</th>
-                            <th class="p-5 border border-white/10 uppercase">Sedang (3)</th>
-                            <th class="p-5 border border-white/10 uppercase">Besar (4)</th>
-                            <th class="p-5 border border-white/10 uppercase">Pasti (5)</th>
+                            <th class="p-2 sm:p-5 border border-white/10 italic text-[8px] sm:text-[10px]">Dampak / Peluang</th>
+                            <th class="p-2 sm:p-5 border border-white/10 uppercase">Jarang (1)</th>
+                            <th class="p-2 sm:p-5 border border-white/10 uppercase">Kecil (2)</th>
+                            <th class="p-2 sm:p-5 border border-white/10 uppercase">Sedang (3)</th>
+                            <th class="p-2 sm:p-5 border border-white/10 uppercase">Besar (4)</th>
+                            <th class="p-2 sm:p-5 border border-white/10 uppercase">Pasti (5)</th>
                         </tr>
                     </thead>
-                    <tbody class="font-bold text-white text-shadow-sm">
+                    <tbody class="font-bold text-white">
                         <tr>
-                            <td class="p-5 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold text-left">Dahsyat (5)</td>
-                            <td class="p-5 bg-rose-600 border border-white/10">9<br><span class="text-[8px] font-light">EKSTRIM</span></td>
-                            <td class="p-5 bg-rose-600 border border-white/10">15<br><span class="text-[8px] font-light">EKSTRIM</span></td>
-                            <td class="p-5 bg-rose-600 border border-white/10">18<br><span class="text-[8px] font-light">EKSTRIM</span></td>
-                            <td class="p-5 bg-rose-600 border border-white/10">23<br><span class="text-[8px] font-light">EKSTRIM</span></td>
-                            <td class="p-5 bg-rose-600 border border-white/10">25<br><span class="text-[8px] font-light">EKSTRIM</span></td>
+                            <td class="p-2 sm:p-5 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold text-left mobile-table-text">Dahsyat (5)</td>
+                            <td class="p-2 sm:p-5 bg-rose-600 border border-white/10 mobile-table-text">9<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
+                            <td class="p-2 sm:p-5 bg-rose-600 border border-white/10 mobile-table-text">15<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
+                            <td class="p-2 sm:p-5 bg-rose-600 border border-white/10 mobile-table-text">18<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
+                            <td class="p-2 sm:p-5 bg-rose-600 border border-white/10 mobile-table-text">23<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
+                            <td class="p-2 sm:p-5 bg-rose-600 border border-white/10 mobile-table-text">25<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
                         </tr>
                         <tr>
-                            <td class="p-5 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold text-left">Besar (4)</td>
-                            <td class="p-5 bg-orange-500 border border-white/10">6<br><span class="text-[8px] font-light">TINGGI</span></td>
-                            <td class="p-5 bg-orange-500 border border-white/10">12<br><span class="text-[8px] font-light">TINGGI</span></td>
-                            <td class="p-5 bg-orange-500 border border-white/10">16<br><span class="text-[8px] font-light">TINGGI</span></td>
-                            <td class="p-5 bg-rose-600 border border-white/10">20<br><span class="text-[8px] font-light">EKSTRIM</span></td>
-                            <td class="p-5 bg-rose-600 border border-white/10">24<br><span class="text-[8px] font-light">EKSTRIM</span></td>
+                            <td class="p-2 sm:p-5 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold text-left mobile-table-text">Besar (4)</td>
+                            <td class="p-2 sm:p-5 bg-orange-500 border border-white/10 mobile-table-text">6<br><span class="mobile-label-text font-light">TINGGI</span></td>
+                            <td class="p-2 sm:p-5 bg-orange-500 border border-white/10 mobile-table-text">12<br><span class="mobile-label-text font-light">TINGGI</span></td>
+                            <td class="p-2 sm:p-5 bg-orange-500 border border-white/10 mobile-table-text">16<br><span class="mobile-label-text font-light">TINGGI</span></td>
+                            <td class="p-2 sm:p-5 bg-rose-600 border border-white/10 mobile-table-text">20<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
+                            <td class="p-2 sm:p-5 bg-rose-600 border border-white/10 mobile-table-text">24<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
                         </tr>
                         <tr>
-                            <td class="p-5 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold text-left">Menengah (3)</td>
-                            <td class="p-5 bg-yellow-400 text-slate-900 border border-white/10">4<br><span class="text-[8px] font-bold">MODERATE</span></td>
-                            <td class="p-5 bg-yellow-400 text-slate-900 border border-white/10">10<br><span class="text-[8px] font-bold">MODERATE</span></td>
-                            <td class="p-5 bg-orange-500 border border-white/10">14<br><span class="text-[8px] font-light">TINGGI</span></td>
-                            <td class="p-5 bg-orange-500 border border-white/10">19<br><span class="text-[8px] font-light">TINGGI</span></td>
-                            <td class="p-5 bg-rose-600 border border-white/10">22<br><span class="text-[8px] font-light">EKSTRIM</span></td>
+                            <td class="p-2 sm:p-5 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold text-left mobile-table-text">Menengah (3)</td>
+                            <td class="p-2 sm:p-5 bg-yellow-400 text-slate-900 border border-white/10 mobile-table-text">4<br><span class="mobile-label-text font-bold">MODERATE</span></td>
+                            <td class="p-2 sm:p-5 bg-yellow-400 text-slate-900 border border-white/10 mobile-table-text">10<br><span class="mobile-label-text font-bold">MODERATE</span></td>
+                            <td class="p-2 sm:p-5 bg-orange-500 border border-white/10 mobile-table-text">14<br><span class="mobile-label-text font-light">TINGGI</span></td>
+                            <td class="p-2 sm:p-5 bg-orange-500 border border-white/10 mobile-table-text">19<br><span class="mobile-label-text font-light">TINGGI</span></td>
+                            <td class="p-2 sm:p-5 bg-rose-600 border border-white/10 mobile-table-text">22<br><span class="mobile-label-text font-light">EKSTRIM</span></td>
                         </tr>
                         <tr>
-                            <td class="p-5 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold text-left">Rendah (2)</td>
-                            <td class="p-5 bg-emerald-600 border border-white/10">2<br><span class="text-[8px] font-light">RENDAH</span></td>
-                            <td class="p-5 bg-emerald-600 border border-white/10">7<br><span class="text-[8px] font-light">RENDAH</span></td>
-                            <td class="p-5 bg-yellow-400 text-slate-900 border border-white/10">11<br><span class="text-[8px] font-bold">MODERATE</span></td>
-                            <td class="p-5 bg-yellow-400 text-slate-900 border border-white/10">17<br><span class="text-[8px] font-bold">MODERATE</span></td>
-                            <td class="p-5 bg-orange-500 border border-white/10">21<br><span class="text-[8px] font-light">TINGGI</span></td>
+                            <td class="p-2 sm:p-5 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold text-left mobile-table-text">Rendah (2)</td>
+                            <td class="p-2 sm:p-5 bg-emerald-600 border border-white/10 mobile-table-text">2<br><span class="mobile-label-text font-light">RENDAH</span></td>
+                            <td class="p-2 sm:p-5 bg-emerald-600 border border-white/10 mobile-table-text">7<br><span class="mobile-label-text font-light">RENDAH</span></td>
+                            <td class="p-2 sm:p-5 bg-yellow-400 text-slate-900 border border-white/10 mobile-table-text">11<br><span class="mobile-label-text font-bold">MODERATE</span></td>
+                            <td class="p-2 sm:p-5 bg-yellow-400 text-slate-900 border border-white/10 mobile-table-text">17<br><span class="mobile-label-text font-bold">MODERATE</span></td>
+                            <td class="p-2 sm:p-5 bg-orange-500 border border-white/10 mobile-table-text">21<br><span class="mobile-label-text font-light">TINGGI</span></td>
                         </tr>
                         <tr>
-                            <td class="p-5 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold text-left">Tidak Signifikan (1)</td>
-                            <td class="p-5 bg-emerald-600 border border-white/10">1<br><span class="text-[8px] font-light">RENDAH</span></td>
-                            <td class="p-5 bg-emerald-600 border border-white/10">3<br><span class="text-[8px] font-light">RENDAH</span></td>
-                            <td class="p-5 bg-emerald-600 border border-white/10">5<br><span class="text-[8px] font-light">RENDAH</span></td>
-                            <td class="p-5 bg-emerald-600 border border-white/10">8<br><span class="text-[8px] font-light">RENDAH</span></td>
-                            <td class="p-5 bg-yellow-400 text-slate-900 border border-white/10">13<br><span class="text-[8px] font-bold">MODERATE</span></td>
+                            <td class="p-2 sm:p-5 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold text-left mobile-table-text">Tidak Signifikan (1)</td>
+                            <td class="p-2 sm:p-5 bg-emerald-600 border border-white/10 mobile-table-text">1<br><span class="mobile-label-text font-light">RENDAH</span></td>
+                            <td class="p-2 sm:p-5 bg-emerald-600 border border-white/10 mobile-table-text">3<br><span class="mobile-label-text font-light">RENDAH</span></td>
+                            <td class="p-2 sm:p-5 bg-emerald-600 border border-white/10 mobile-table-text">5<br><span class="mobile-label-text font-light">RENDAH</span></td>
+                            <td class="p-2 sm:p-5 bg-emerald-600 border border-white/10 mobile-table-text">8<br><span class="mobile-label-text font-light">RENDAH</span></td>
+                            <td class="p-2 sm:p-5 bg-yellow-400 text-slate-900 border border-white/10 mobile-table-text">13<br><span class="mobile-label-text font-bold">MODERATE</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -219,10 +230,10 @@
                 <div class="lg:text-right space-y-6">
                     <h3 class="text-white font-bold text-lg">Ikuti Kami</h3>
                     <div class="flex lg:justify-end gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg"><i class="fa-brands fa-whatsapp text-xl"></i></a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg"><i class="fa-brands fa-instagram text-xl"></i></a>
-                        <a href="mailto:perumda.danumtaka@gmail.com" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg"><i class="fa-solid fa-envelope text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg transition-all"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg transition-all"><i class="fa-brands fa-instagram text-xl"></i></a>
+                        <a href="mailto:perumda.danumtaka@gmail.com" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg transition-all"><i class="fa-solid fa-envelope text-lg"></i></a>
                     </div>
                 </div>
             </div>
