@@ -4,188 +4,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ManRisk — Enterprise Risk Management Software</title>
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="danumtaka.png">
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Warna Biru Custom sesuai gambar */
+        .bg-danum-dark { bg-color: #0d2d44; } /* Biru Tua sesuai Header Gambar 1 */
+        .bg-danum-gradient { background: linear-gradient(135deg, #0d2d44 0%, #16425b 100%); }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+<body class="bg-[#0d2d44] text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
 
-    <!-- NAVBAR -->
-    <header class="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-800 z-50">
+    <header class="fixed top-0 w-full bg-[#0d2d44]/90 backdrop-blur-md border-b border-white/10 z-50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
-                <!-- Logo diganti dengan danumtaka.png -->
-                <img src="danumtaka.png" alt="Logo Danumtaka" class="w-10 h-10 object-contain">
-                <span class="text-xl font-extrabold tracking-tight text-white group-hover:text-emerald-400 transition">ManRisk</span>
+                <img src="danumtaka.png" alt="Logo Danumtaka" class="w-12 h-12 object-contain">
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tight text-white leading-none">ManRisk</span>
+                    <span class="text-[10px] text-emerald-400 font-bold tracking-widest uppercase">Danum Taka Safety</span>
+                </div>
             </a>
             
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#fitur" class="hover:text-white transition">Fitur Utama</a>
-                <a href="#solusi" class="hover:text-white transition">Solusi Bisnis</a>
-                <a href="#audit" class="hover:text-white transition">Keamanan & Audit</a>
-                <!-- Link Harga dihapus -->
+                <a href="#fitur" class="hover:text-emerald-400 transition">Fitur Utama</a>
+                <a href="#matriks" class="hover:text-emerald-400 transition">Matriks Risiko</a>
+                <a href="#audit" class="hover:text-emerald-400 transition">Keamanan</a>
             </nav>
 
             <div class="flex items-center gap-4">
-                <!-- Tombol Masuk ganti Login dan diberi warna, Tombol Demo dihapus -->
-                <a href="#" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/10 hover:scale-[1.02]">
+                <a href="#" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-2.5 rounded-lg transition shadow-lg shadow-emerald-900/20 hover:scale-[1.02]">
                     Login
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="relative pt-36 pb-24 overflow-hidden">
-        <!-- Background Glow Deco -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl -z-10"></div>
+    <section class="relative pt-40 pb-20 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-3xl -z-10"></div>
         
         <div class="max-w-5xl mx-auto px-6 text-center space-y-8">
-            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-emerald-400">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ERM Software Generasi Baru
-            </span>
-            
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.15]">
-                Kendali Penuh Atas <span class="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Risiko Operasional</span> Perusahaan Anda
+                Sistem Manajemen Risiko <br>
+                <span class="text-emerald-400">Digital Terintegrasi</span>
             </h1>
             
-            <p class="text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto font-normal">
-                Platform mitigasi terpusat untuk memantau ancaman data, audit kepatuhan, hingga pelacakan performa tim dalam satu visual dashboard interaktif.
+            <p class="text-slate-300 text-lg sm:text-xl max-w-2xl mx-auto font-light">
+                Solusi cerdas untuk identifikasi, analisis, dan mitigasi risiko operasional pada infrastruktur vital perusahaan.
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
-                <!-- Tombol ganti teks menjadi Login -->
-                <a href="#" class="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-xl shadow-emerald-500/20 hover:opacity-90 transition text-center">
-                    Login
-                </a>
-                <a href="#fitur" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold px-8 py-4 rounded-xl transition flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-play text-xs text-emerald-400"></i> Lihat Cara Kerja
+            <div class="flex justify-center pt-4">
+                <a href="#" class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold px-10 py-4 rounded-xl shadow-xl shadow-black/20 hover:opacity-90 transition text-center">
+                    Login ke Dashboard
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- TRUSTED BY / LOGO SLIDER SHAM -->
-    <section class="border-y border-slate-800 bg-slate-900/50 py-10">
+    <section id="matriks" class="py-16 bg-[#0a2335]">
         <div class="max-w-7xl mx-auto px-6">
-            <p class="text-center text-xs font-semibold uppercase tracking-widest text-slate-500 mb-6">Telah Dipercaya Oleh Industri Finansial & Infrastruktur</p>
-            <div class="flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale hover:grayscale-0 transition duration-300">
-                <span class="text-xl font-bold tracking-wider"><i class="fa-solid fa-water-ladder mr-2"></i> PERUMDA AIR</span>
-                <span class="text-xl font-bold tracking-wider"><i class="fa-solid fa-building-columns mr-2"></i> APEX BANK</span>
-                <span class="text-xl font-bold tracking-wider"><i class="fa-solid fa-bolt mr-2"></i> TRANS ENERGI</span>
-                <span class="text-xl font-bold tracking-wider"><i class="fa-solid fa-network-wired mr-2"></i> TECH INFRA</span>
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-white flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-table-cells text-emerald-400"></i> Matriks Penilaian Risiko
+                </h2>
+                <p class="text-slate-400 text-sm mt-2 font-light tracking-wide">Standardisasi evaluasi tingkat dampak dan frekuensi risiko</p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-white/5 shadow-2xl">
+                <table class="w-full text-[11px] sm:text-xs text-center border-collapse">
+                    <thead>
+                        <tr class="bg-white/5 text-slate-300 uppercase tracking-wider font-bold">
+                            <th class="p-4 border border-white/10 italic text-[10px]">Dampak / Peluang</th>
+                            <th class="p-4 border border-white/10 uppercase">Jarang (1)</th>
+                            <th class="p-4 border border-white/10 uppercase">Kecil (2)</th>
+                            <th class="p-4 border border-white/10 uppercase">Sedang (3)</th>
+                            <th class="p-4 border border-white/10 uppercase">Besar (4)</th>
+                            <th class="p-4 border border-white/10 uppercase">Pasti (5)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="font-bold text-white">
+                        <tr>
+                            <td class="p-4 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold">Dahsyat (5)</td>
+                            <td class="p-4 bg-rose-600 border border-white/10">9<br><span class="text-[8px] font-light uppercase">Ekstrim</span></td>
+                            <td class="p-4 bg-rose-600 border border-white/10">15<br><span class="text-[8px] font-light uppercase">Ekstrim</span></td>
+                            <td class="p-4 bg-rose-600 border border-white/10">18<br><span class="text-[8px] font-light uppercase">Ekstrim</span></td>
+                            <td class="p-4 bg-rose-600 border border-white/10">23<br><span class="text-[8px] font-light uppercase">Ekstrim</span></td>
+                            <td class="p-4 bg-rose-600 border border-white/10">25<br><span class="text-[8px] font-light uppercase">Ekstrim</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold">Besar (4)</td>
+                            <td class="p-4 bg-orange-500 border border-white/10">6<br><span class="text-[8px] font-light uppercase">Tinggi</span></td>
+                            <td class="p-4 bg-orange-500 border border-white/10">12<br><span class="text-[8px] font-light uppercase">Tinggi</span></td>
+                            <td class="p-4 bg-orange-500 border border-white/10">16<br><span class="text-[8px] font-light uppercase">Tinggi</span></td>
+                            <td class="p-4 bg-rose-600 border border-white/10">20<br><span class="text-[8px] font-light uppercase">Ekstrim</span></td>
+                            <td class="p-4 bg-rose-600 border border-white/10">24<br><span class="text-[8px] font-light uppercase">Ekstrim</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold">Menengah (3)</td>
+                            <td class="p-4 bg-amber-400 text-slate-900 border border-white/10">4<br><span class="text-[8px] font-bold uppercase">Moderate</span></td>
+                            <td class="p-4 bg-amber-400 text-slate-900 border border-white/10">10<br><span class="text-[8px] font-bold uppercase">Moderate</span></td>
+                            <td class="p-4 bg-orange-500 border border-white/10">14<br><span class="text-[8px] font-light uppercase">Tinggi</span></td>
+                            <td class="p-4 bg-orange-500 border border-white/10">19<br><span class="text-[8px] font-light uppercase">Tinggi</span></td>
+                            <td class="p-4 bg-rose-600 border border-white/10">22<br><span class="text-[8px] font-light uppercase">Ekstrim</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold">Rendah (2)</td>
+                            <td class="p-4 bg-emerald-600 border border-white/10">2<br><span class="text-[8px] font-light uppercase">Rendah</span></td>
+                            <td class="p-4 bg-emerald-600 border border-white/10">7<br><span class="text-[8px] font-light uppercase">Rendah</span></td>
+                            <td class="p-4 bg-amber-400 text-slate-900 border border-white/10">11<br><span class="text-[8px] font-bold uppercase">Moderate</span></td>
+                            <td class="p-4 bg-amber-400 text-slate-900 border border-white/10">17<br><span class="text-[8px] font-bold uppercase">Moderate</span></td>
+                            <td class="p-4 bg-orange-500 border border-white/10">21<br><span class="text-[8px] font-light uppercase">Tinggi</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 bg-white/5 border border-white/10 text-slate-300 uppercase font-bold">Tidak Signifikan (1)</td>
+                            <td class="p-4 bg-emerald-600 border border-white/10">1<br><span class="text-[8px] font-light uppercase">Rendah</span></td>
+                            <td class="p-4 bg-emerald-600 border border-white/10">3<br><span class="text-[8px] font-light uppercase">Rendah</span></td>
+                            <td class="p-4 bg-emerald-600 border border-white/10">5<br><span class="text-[8px] font-light uppercase">Rendah</span></td>
+                            <td class="p-4 bg-emerald-600 border border-white/10">8<br><span class="text-[8px] font-light uppercase">Rendah</span></td>
+                            <td class="p-4 bg-amber-400 text-slate-900 border border-white/10">13<br><span class="text-[8px] font-bold uppercase">Moderate</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- FITUR UTAMA -->
     <section id="fitur" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <h2 class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Fitur Unggulan</h2>
-            <p class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Didesain untuk Efisiensi Manajemen Risiko</p>
-            <p class="text-slate-400 text-sm sm:text-base">Hilangkan proses manual berbasis spreadsheet yang melelahkan dan rentan kesalahan.</p>
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-white tracking-tight">Digitalisasi Mitigasi Risiko</h2>
+            <div class="w-16 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition space-y-4">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
-                    <i class="fa-solid fa-table-cells"></i>
+            <div class="bg-white/5 p-8 rounded-2xl border border-white/5 hover:border-emerald-500/50 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-file-shield"></i>
                 </div>
-                <h3 class="text-xl font-bold text-white">Dynamic Risk Register</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Catat, petakan, dan kategorikan matriks dampak risiko berdasarkan divisi secara instan dengan klasifikasi warna otomatis sesuai tingkat bahaya.
-                </p>
+                <h3 class="text-xl font-bold text-white mb-2">Pencatatan Real-time</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Identifikasi risiko di lapangan dan laporkan langsung melalui sistem cloud yang aman.</p>
             </div>
 
-            <!-- Card 2 -->
-            <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition space-y-4">
-                <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-xl">
-                    <i class="fa-solid fa-user-check"></i>
+            <div class="bg-white/5 p-8 rounded-2xl border border-white/5 hover:border-emerald-500/50 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-clipboard-check"></i>
                 </div>
-                <h3 class="text-xl font-bold text-white">Audit Trail & Log Transparan</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Lacak setiap modifikasi, penambahan, atau perubahan rencana mitigasi yang dilakukan oleh pengguna secara real-time demi akuntabilitas tim yang solid.
-                </p>
+                <h3 class="text-xl font-bold text-white mb-2">Audit Transparan</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Seluruh perubahan data terekam secara otomatis untuk kebutuhan audit internal dan kepatuhan.</p>
             </div>
 
-            <!-- Card 3 -->
-            <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition space-y-4">
-                <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl">
-                    <i class="fa-solid fa-chart-line"></i>
+            <div class="bg-white/5 p-8 rounded-2xl border border-white/5 hover:border-emerald-500/50 transition-all duration-300 group">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                    <i class="fa-solid fa-chart-pie"></i>
                 </div>
-                <h3 class="text-xl font-bold text-white">Laporan Eksekutif Otomatis</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Ekspor laporan komprehensif siap cetak untuk kebutuhan rapat direksi atau audit regulasi berkala hanya dalam satu klik mudah.
-                </p>
+                <h3 class="text-xl font-bold text-white mb-2">Visualisasi Data</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Analisis profil risiko perusahaan melalui grafik dan dashboard yang mudah dipahami direksi.</p>
             </div>
         </div>
     </section>
 
-    <!-- SECTION KELOLA USER (HIGHLIGHT) -->
-    <section id="audit" class="py-20 bg-slate-950/40 border-y border-slate-800">
+    <section id="audit" class="py-20 bg-[#0a2335] border-y border-white/5">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
-                <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-lg">
-                    <i class="fa-solid fa-user-lock"></i>
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight">Keamanan Data Ketat dengan Kontrol Hak Akses</h2>
-                <p class="text-slate-400 leading-relaxed">
-                    Jangan biarkan data rentan bocor. Atur hak akses spesifik untuk tiap departemen—mulai dari staf divisi administrasi khusus, tim operasional lapangan, hingga supervisor pusat. Semua aktivitas modifikasi log terlindungi dengan enkripsi berlapis.
+                <h2 class="text-3xl font-bold text-white leading-tight">Kontrol Akses Berbasis Otoritas</h2>
+                <p class="text-slate-300 leading-relaxed font-light italic">
+                    "Memastikan setiap unit kerja bertanggung jawab atas data risikonya masing-masing."
                 </p>
-                <div class="space-y-3">
-                    <div class="flex items-center gap-3 text-sm font-medium text-slate-200">
-                        <i class="fa-solid fa-circle-check text-emerald-400"></i> Pemisahan Otoritas Per Divisi
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-shield-check text-emerald-400 mt-1"></i>
+                        <p class="text-sm text-slate-300"><span class="font-bold text-white">Enkripsi Data:</span> Seluruh informasi risiko dilindungi protokol enkripsi tingkat tinggi.</p>
                     </div>
-                    <div class="flex items-center gap-3 text-sm font-medium text-slate-200">
-                        <i class="fa-solid fa-circle-check text-emerald-400"></i> Proteksi Percobaan Brute-Force & Log Gagal
-                    </div>
-                    <div class="flex items-center gap-3 text-sm font-medium text-slate-200">
-                        <i class="fa-solid fa-circle-check text-emerald-400"></i> Sistem Cloud Terdistribusi yang Selalu Sinkron
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-shield-check text-emerald-400 mt-1"></i>
+                        <p class="text-sm text-slate-300"><span class="font-bold text-white">Hierarki Pengguna:</span> Super Admin, Divisi, dan Unit Lapangan memiliki batasan akses yang jelas.</p>
                     </div>
                 </div>
             </div>
             
-            <!-- Visual Mockup Gimmick -->
-            <div class="bg-gradient-to-tr from-slate-800 to-slate-900 border border-slate-700 rounded-2xl p-6 shadow-2xl relative overflow-hidden group">
-                <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-4">
-                    <span class="text-xs font-bold text-slate-400">MANAJEMEN PENGGUNA</span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                </div>
-                <div class="space-y-3">
-                    <div class="bg-slate-950/60 p-3 rounded-xl flex justify-between items-center text-xs">
-                        <span class="font-semibold text-white">Admin_TRA</span>
-                        <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 font-mono text-[10px]">Divisi Tunggakan</span>
+            <div class="bg-danum-gradient border border-white/10 rounded-3xl p-8 shadow-2xl">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center font-bold">ADM</div>
+                        <div>
+                            <p class="text-xs font-bold">Super Administrator</p>
+                            <p class="text-[10px] text-emerald-400">Full Access System</p>
+                        </div>
                     </div>
-                    <div class="bg-slate-950/60 p-3 rounded-xl flex justify-between items-center text-xs">
-                        <span class="font-semibold text-white">Spv_LaweLawe</span>
-                        <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-mono text-[10px]">Unit Lapangan</span>
-                    </div>
-                    <div class="bg-slate-950/60 p-3 rounded-xl flex justify-between items-center text-xs">
-                        <span class="font-semibold text-white">System_Sec_Audit</span>
-                        <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 font-mono text-[10px]">Super Admin</span>
+                    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl opacity-60">
+                        <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center font-bold text-xs">DIV</div>
+                        <div>
+                            <p class="text-xs font-bold">Admin Divisi (TRA)</p>
+                            <p class="text-[10px] text-slate-400">Restricted to Dept Data</p>
+                        </div>
                     </div>
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-40"></div>
             </div>
         </div>
     </section>
 
-    <!-- Bagian Call to Action (CTA) dihapus sesuai permintaan -->
-
-    <!-- FOOTER -->
-    <footer class="border-t border-slate-800 bg-slate-950 py-12 text-sm text-slate-500">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <span class="text-white font-extrabold tracking-tight">ManRisk</span>
-                <span>— Platform Manajemen Risiko Enterprise Modern.</span>
+    <footer class="bg-[#0d2d44] py-12 text-sm text-slate-400">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+            <div class="flex items-center justify-center gap-2">
+                <img src="danumtaka.png" alt="Logo" class="w-8 h-8 opacity-70">
+                <span class="text-white font-bold tracking-tight">ManRisk — Danum Taka Safety</span>
             </div>
-            <div class="text-xs">
-                &copy; 2026 ManRisk / Danumtaka Enterprise. Hak Cipta Dilindungi Undang-Undang.
-            </div>
+            <p class="text-[11px] uppercase tracking-widest">Digitalizing Risk Resilience &middot; 2026</p>
         </div>
     </footer>
 
