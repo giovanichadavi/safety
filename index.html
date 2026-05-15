@@ -109,6 +109,23 @@
             border-radius: 20px;
         }
 
+        /* TAMBAHAN ANIMASI LATAR BELAKANG ORBITAL GLOW */
+        .glow-orb {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: -5;
+            animation: orbit 20s infinite linear;
+        }
+
+        @keyframes orbit {
+            from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+
         @media (max-width: 640px) {
             .mobile-table-text { font-size: 8px !important; padding: 4px !important; }
             .mobile-label-text { font-size: 7px !important; }
@@ -159,6 +176,9 @@
     </header>
 
     <section class="relative pt-48 pb-32 overflow-hidden flex items-center justify-center min-h-[90vh]">
+        <div class="glow-orb" style="top: 10%; left: 10%;"></div>
+        <div class="glow-orb" style="bottom: 10%; right: 10%; animation-duration: 25s; animation-direction: reverse;"></div>
+
         <div class="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none overflow-hidden">
             <svg width="100%" height="100%" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <path class="animated-line" d="M-100,250 C100,150 200,350 400,200 C600,50 800,380 1000,150 C1200,50 1400,300 1600,200" 
