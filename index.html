@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RiskVerse — Enterprise Risk Management Software</title>
+    <title>ManRisk — Enterprise Risk Management Software</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="danumtaka.png">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
@@ -15,23 +17,22 @@
     <header class="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-800 z-50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20">
-                    <i class="fa-solid fa-shield-halved text-slate-950 text-xl"></i>
-                </div>
-                <span class="text-xl font-extrabold tracking-tight text-white group-hover:text-emerald-400 transition">RiskVerse</span>
+                <!-- Logo diganti dengan danumtaka.png -->
+                <img src="danumtaka.png" alt="Logo Danumtaka" class="w-10 h-10 object-contain">
+                <span class="text-xl font-extrabold tracking-tight text-white group-hover:text-emerald-400 transition">ManRisk</span>
             </a>
             
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
                 <a href="#fitur" class="hover:text-white transition">Fitur Utama</a>
                 <a href="#solusi" class="hover:text-white transition">Solusi Bisnis</a>
                 <a href="#audit" class="hover:text-white transition">Keamanan & Audit</a>
-                <a href="#harga" class="hover:text-white transition">Harga</a>
+                <!-- Link Harga dihapus -->
             </nav>
 
             <div class="flex items-center gap-4">
-                <a href="#" class="text-sm font-semibold text-slate-300 hover:text-white transition px-4 py-2 hidden sm:block">Masuk</a>
-                <a href="#demo" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/10 hover:scale-[1.02]">
-                    Coba Demo Gratis
+                <!-- Tombol Masuk ganti Login dan diberi warna, Tombol Demo dihapus -->
+                <a href="#" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/10 hover:scale-[1.02]">
+                    Login
                 </a>
             </div>
         </div>
@@ -56,8 +57,9 @@
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
-                <a href="#demo" class="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-xl shadow-emerald-500/20 hover:opacity-90 transition text-center">
-                    Mulai Konsultasi Gratis
+                <!-- Tombol ganti teks menjadi Login -->
+                <a href="#" class="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-xl shadow-emerald-500/20 hover:opacity-90 transition text-center">
+                    Login
                 </a>
                 <a href="#fitur" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold px-8 py-4 rounded-xl transition flex items-center justify-center gap-2">
                     <i class="fa-solid fa-play text-xs text-emerald-400"></i> Lihat Cara Kerja
@@ -172,35 +174,17 @@
         </div>
     </section>
 
-    <!-- CALL TO ACTION (CTA) -->
-    <section id="demo" class="py-24 max-w-5xl mx-auto px-6 text-center">
-        <div class="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-3xl p-8 sm:p-16 shadow-2xl shadow-emerald-950/50 space-y-6 relative overflow-hidden">
-            <!-- Background Deco Sparkle -->
-            <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-white/5 rounded-full blur-2xl"></div>
-            
-            <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight max-w-2xl mx-auto leading-tight">
-                Siap Amankan Operasional Bisnis Anda Sekarang?
-            </h2>
-            <p class="text-emerald-100/80 text-sm sm:text-base max-w-lg mx-auto">
-                Dapatkan demo gratis yang disesuaikan langsung dengan struktur matriks risiko perusahaan Anda. Konsultasi 100% gratis dengan spesialis ERM kami.
-            </p>
-            <div class="pt-4">
-                <a href="mailto:info@danumtaka.com" class="inline-block bg-slate-950 hover:bg-slate-900 text-white font-bold px-8 py-4 rounded-xl transition shadow-lg hover:scale-[1.01]">
-                    Hubungi Tim Ahli Kami <i class="fa-solid fa-arrow-right ml-2 text-emerald-400"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- Bagian Call to Action (CTA) dihapus sesuai permintaan -->
 
     <!-- FOOTER -->
     <footer class="border-t border-slate-800 bg-slate-950 py-12 text-sm text-slate-500">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <span class="text-white font-extrabold tracking-tight">RiskVerse</span>
+                <span class="text-white font-extrabold tracking-tight">ManRisk</span>
                 <span>— Platform Manajemen Risiko Enterprise Modern.</span>
             </div>
             <div class="text-xs">
-                &copy; 2026 RiskVerse / Danumtaka Enterprise. Hak Cipta Dilindungi Undang-Undang.
+                &copy; 2026 ManRisk / Danumtaka Enterprise. Hak Cipta Dilindungi Undang-Undang.
             </div>
         </div>
     </footer>
