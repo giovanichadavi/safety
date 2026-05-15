@@ -38,7 +38,17 @@
             background: rgba(255, 255, 255, 0.08);
         }
 
-        /* Perbaikan Tabel Mobile agar terlihat semua */
+        /* Animasi Grafik Latar Belakang (Risiko Naik Turun) */
+        @keyframes chartFlow {
+            0% { stroke-dashoffset: 1000; opacity: 0.2; }
+            50% { opacity: 0.5; }
+            100% { stroke-dashoffset: 0; opacity: 0.2; }
+        }
+        .chart-path {
+            stroke-dasharray: 1000;
+            animation: chartFlow 8s linear infinite;
+        }
+
         @media (max-width: 640px) {
             .mobile-table-text {
                 font-size: 8px !important;
@@ -49,7 +59,6 @@
             }
         }
 
-        /* Back to Top Styling */
         #backToTop {
             display: none;
             position: fixed;
@@ -91,7 +100,13 @@
     </header>
 
     <section class="relative pt-48 pb-32 overflow-hidden flex items-center justify-center min-h-[90vh]">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/20 via-transparent to-transparent -z-10"></div>
+        <div class="absolute inset-0 -z-10 opacity-30 flex items-center justify-center">
+            <svg width="100%" height="400" viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-7xl">
+                <path class="chart-path" d="M0 350C50 350 100 100 150 150C200 200 250 380 300 300C350 220 400 50 450 120C500 190 550 320 600 250C650 180 700 80 750 150C800 220 850 350 900 300C950 250 1000 50 1000 50" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+        </div>
+        
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent -z-10"></div>
         <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#0a2538] to-transparent -z-10"></div>
         
         <div class="max-w-5xl mx-auto px-6 text-center">
@@ -252,43 +267,53 @@
 
     <footer class="bg-[#071d2c] pt-20 pb-10 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                <div class="space-y-6">
+            <div class="flex flex-col lg:flex-row justify-between gap-12 mb-16">
+                <div class="flex-1 space-y-6">
                     <div class="flex items-center gap-3">
-                        <img src="danumtaka.png" alt="Logo" class="w-10 h-10">
+                        <img src="danumtaka.png" alt="Logo" class="w-12 h-12">
                         <span class="text-2xl font-bold text-white tracking-tight">ManRisk</span>
                     </div>
-                    <div class="space-y-4 text-slate-400 leading-relaxed max-w-md">
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                        Platform manajemen risiko enterprise yang dirancang khusus untuk meningkatkan resiliensi operasional Perumda Air Minum Danum Taka melalui tata kelola data digital yang presisi.
+                    </p>
+                </div>
+
+                <div class="flex-1 space-y-6">
+                    <h3 class="text-white font-bold text-lg uppercase tracking-wider">Kantor Pusat</h3>
+                    <div class="space-y-4 text-slate-400 text-sm">
                         <div class="flex gap-4">
                             <i class="fa-solid fa-location-dot text-emerald-400 mt-1"></i>
                             <p>Jl. Propinsi Km. 1,5 Kel. Penajam Kec. Penajam Kab. Penajam Paser Utara - Kalimantan Timur</p>
                         </div>
-                        <div class="flex gap-4">
-                            <i class="fa-solid fa-envelope text-emerald-400 mt-1"></i>
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-envelope text-emerald-400"></i>
                             <p>perumda.danumtaka@gmail.com</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="lg:text-right space-y-6">
-                    <h3 class="text-white font-bold text-lg">Ikuti Kami</h3>
-                    <div class="flex lg:justify-end gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg transition-all"><i class="fa-brands fa-whatsapp text-xl"></i></a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg transition-all"><i class="fa-brands fa-instagram text-xl"></i></a>
-                        <a href="mailto:perumda.danumtaka@gmail.com" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 hover-card shadow-lg transition-all"><i class="fa-solid fa-envelope text-lg"></i></a>
+                <div class="flex-none space-y-6 lg:w-64">
+                    <h3 class="text-white font-bold text-lg uppercase tracking-wider lg:text-right">Ikuti Kami</h3>
+                    <div class="flex gap-4 lg:justify-end">
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 transition-all border border-white/10 hover:-translate-y-1"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 transition-all border border-white/10 hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 transition-all border border-white/10 hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:perumda.danumtaka@gmail.com" class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white hover:bg-emerald-600 transition-all border border-white/10 hover:-translate-y-1"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-white/5 pt-8 text-center text-slate-500 text-xs">
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-xs tracking-wide">
                 <p>&copy; 2026 Perumda Air Minum Danum Taka. Seluruh Hak Cipta Dilindungi.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-emerald-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-emerald-400">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Logika Back to Top Button
         const btt = document.getElementById("backToTop");
         window.onscroll = function() {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
