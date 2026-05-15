@@ -3,264 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safety Danum Taka | Manajemen Risiko</title>
-    <link rel="icon" type="image/jpeg" href="logo.jpeg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #007bff;
-            --success: #28a745;
-            --danger: #dc3545;
-            --warning: #ffc107;
-            --info: #17a2b8;
-            --light: #f4f7f6;
-            --white: #ffffff;
-            --dark: #2d3436;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: var(--dark); line-height: 1.6; }
-
-        /* Navbar */
-        nav {
-            background: var(--white);
-            height: 75px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 6%;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-area { display: flex; align-items: center; gap: 12px; }
-        .logo-area img { height: 50px; }
-        .logo-text h1 { font-size: 1rem; color: var(--primary); font-weight: 800; }
-        .logo-text p { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: #636e72; }
-
-        .btn-login {
-            background: var(--primary);
-            color: white;
-            padding: 10px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
-        .btn-login:hover { background: #0056b3; box-shadow: 0 4px 12px rgba(0,123,255,0.3); }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-
-        /* Welcome Section */
-        .welcome-header { margin-bottom: 30px; border-left: 5px solid var(--primary); padding-left: 15px; }
-        .welcome-header h2 { font-size: 1.6rem; color: #2d3436; }
-
-        /* Stat Cards */
-        .stats-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        .stat-card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .stat-info h3 { font-size: 2.2rem; }
-        .stat-info p { font-size: 0.9rem; opacity: 0.9; font-weight: 500; }
-        
-        .bg-blue { background: #4895ef; }
-        .bg-green { background: #4cc9f0; }
-        .bg-red { background: #f72585; }
-        .bg-orange { background: #f8961e; }
-
-        /* Matrix Section */
-        .content-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-        }
-        .card-title { font-size: 1.2rem; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
-        
-        .matrix-table { width: 100%; border-collapse: separate; border-spacing: 4px; text-align: center; font-size: 0.7rem; }
-        .matrix-table th { padding: 12px; background: #f1f2f6; border-radius: 4px; font-weight: 700; color: #2d3436; }
-        .matrix-table td { padding: 10px; border-radius: 4px; font-weight: 700; color: white; transition: 0.3s; }
-        .matrix-table td:hover { filter: brightness(1.1); transform: scale(1.02); }
-        .row-label { background: #f1f2f6 !important; color: #2d3436 !important; width: 120px; }
-
-        /* Matrix Legend Colors */
-        .m-ekstrim { background-color: #d9534f; }
-        .m-tinggi { background-color: #f0ad4e; }
-        .m-moderat { background-color: #ffd166; color: #333 !important; }
-        .m-rendah { background-color: #5cb85c; }
-
-        /* Unit List Section (Tambahan Bagus) */
-        .unit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        .unit-item {
-            background: #f8f9fa;
-            padding: 12px 15px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            border-left: 3px solid var(--primary);
-            color: #444;
-        }
-
-        footer { text-align: center; padding: 40px; background: #2d3436; color: white; font-size: 0.8rem; margin-top: 40px; }
-
-        @media (max-width: 768px) {
-            nav { padding: 0 15px; }
-            .logo-text h1 { font-size: 0.8rem; }
-            .matrix-table { font-size: 0.6rem; }
-        }
-    </style>
+    <title>Enterprise Risk Management System</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans leading-normal tracking-normal">
 
-    <nav>
-        <div class="logo-area">
-            <img src="logo.jpeg" alt="Logo">
-            <div class="logo-text">
-                <h1>SAFETY DANUM TAKA</h1>
-                <p>Perumda Air Minum Danum Taka</p>
-            </div>
-        </div>
-        <div class="nav-actions">
-            <a href="#" class="btn-login">ADMIN LOGIN</a>
-        </div>
-    </nav>
-
-    <div class="container">
+    <div class="flex h-screen overflow-hidden">
         
-        <div class="welcome-header">
-            <h2>Selamat Datang Di Safety Danum Taka</h2>
-            <p>Sistem Informasi Manajemen Risiko Terintegrasi</p>
-        </div>
-
-        <div class="stats-wrapper">
-            <div class="stat-card bg-blue">
-                <div class="stat-info">
-                    <h3>71</h3>
-                    <p>Total Risiko Terlapor</p>
+        <!-- SIDEBAR -->
+        <div class="w-64 bg-slate-900 text-slate-100 flex flex-col justify-between hidden md:flex">
+            <div>
+                <!-- Logo / Brand -->
+                <div class="h-16 flex items-center px-6 bg-slate-950 gap-3">
+                    <i class="fa-solid fa-shield-halved text-emerald-400 text-2xl"></i>
+                    <span class="text-lg font-bold tracking-wider text-white">RISK TRACK</span>
                 </div>
-                <span>⚠️</span>
+                
+                <!-- Navigation Links -->
+                <nav class="mt-6 px-4 space-y-1">
+                    <a href="#" class="flex items-center gap-3 px-4 py-3 bg-emerald-600 text-white rounded-lg font-medium transition">
+                        <i class="fa-solid fa-chart-pie w-5"></i> Dashboard
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg font-medium transition">
+                        <i class="fa-solid fa-triangle-exclamation w-5"></i> Daftar Risiko (Register)
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg font-medium transition">
+                        <i class="fa-solid fa-clock-rotate-left w-5"></i> Log Aktivitas / Audit
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg font-medium transition">
+                        <i class="fa-solid fa-users w-5"></i> Manajemen Pengguna
+                    </a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg font-medium transition">
+                        <i class="fa-solid fa-gears w-5"></i> Pengaturan Sistem
+                    </a>
+                </nav>
             </div>
-            <div class="stat-card bg-green">
-                <div class="stat-info">
-                    <h3>23</h3>
-                    <p>Sudah Ditindaklanjuti</p>
+            
+            <!-- User Profile Footer Sidebar -->
+            <div class="p-4 border-t border-slate-800 bg-slate-950 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-emerald-500 flex items-center justify-center font-bold text-white">
+                    ADM
                 </div>
-                <span>✅</span>
-            </div>
-            <div class="stat-card bg-red">
-                <div class="stat-info">
-                    <h3>48</h3>
-                    <p>Baru (Belum Proses)</p>
+                <div>
+                    <p class="text-sm font-medium text-white">Administrator</p>
+                    <p class="text-xs text-slate-400">admin@danumtaka.com</p>
                 </div>
-                <span>🔔</span>
-            </div>
-            <div class="stat-card bg-orange">
-                <div class="stat-info">
-                    <h3>19</h3>
-                    <p>Total Unit / Divisi</p>
-                </div>
-                <span>🏢</span>
-            </div>
-        </div>
-
-        <div class="content-card">
-            <div class="card-title">📊 Matriks Penilaian Risiko</div>
-            <div style="overflow-x: auto;">
-                <table class="matrix-table">
-                    <thead>
-                        <tr>
-                            <th rowspan="2" class="row-label">Dampak / Peluang</th>
-                            <th>Jarang (1)</th>
-                            <th>Kecil (2)</th>
-                            <th>Sedang (3)</th>
-                            <th>Besar (4)</th>
-                            <th>Pasti (5)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="row-label">Dahsyat (5)</td>
-                            <td class="m-ekstrim">9<br>Ekstrim</td>
-                            <td class="m-ekstrim">15<br>Ekstrim</td>
-                            <td class="m-ekstrim">18<br>Ekstrim</td>
-                            <td class="m-ekstrim">23<br>Ekstrim</td>
-                            <td class="m-ekstrim">25<br>Ekstrim</td>
-                        </tr>
-                        <tr>
-                            <td class="row-label">Besar (4)</td>
-                            <td class="m-tinggi">6<br>Tinggi</td>
-                            <td class="m-tinggi">12<br>Tinggi</td>
-                            <td class="m-tinggi">16<br>Tinggi</td>
-                            <td class="m-ekstrim">19<br>Ekstrim</td>
-                            <td class="m-ekstrim">24<br>Ekstrim</td>
-                        </tr>
-                        <tr>
-                            <td class="row-label">Menengah (3)</td>
-                            <td class="m-moderat">4<br>Moderat</td>
-                            <td class="m-moderat">10<br>Moderat</td>
-                            <td class="m-tinggi">14<br>Tinggi</td>
-                            <td class="m-tinggi">17<br>Tinggi</td>
-                            <td class="m-ekstrim">22<br>Ekstrim</td>
-                        </tr>
-                        <tr>
-                            <td class="row-label">Rendah (2)</td>
-                            <td class="m-rendah">2<br>Rendah</td>
-                            <td class="m-rendah">7<br>Rendah</td>
-                            <td class="m-moderat">11<br>Moderat</td>
-                            <td class="m-moderat">13<br>Moderat</td>
-                            <td class="m-tinggi">21<br>Tinggi</td>
-                        </tr>
-                        <tr>
-                            <td class="row-label">Tidak Signifikan (1)</td>
-                            <td class="m-rendah">1<br>Rendah</td>
-                            <td class="m-rendah">3<br>Rendah</td>
-                            <td class="m-rendah">5<br>Rendah</td>
-                            <td class="m-rendah">8<br>Rendah</td>
-                            <td class="m-moderat">13<br>Moderat</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
 
-        <div class="content-card">
-            <div class="card-title">🏢 Sebaran Unit Manajemen Risiko</div>
-            <div class="unit-grid">
-                <div class="unit-item">Divisi Hublang</div>
-                <div class="unit-item">Divisi Kepegawaian</div>
-                <div class="unit-item">Divisi Umum</div>
-                <div class="unit-item">Unit Lawe-Lawe</div>
-                <div class="unit-item">Unit Babulu</div>
-                <div class="unit-item">Unit Waru</div>
-                <div class="unit-item">Unit Sepaku</div>
-                <div class="unit-item">Divisi Keuangan</div>
-            </div>
-        </div>
+        <!-- MAIN CONTENT AREA -->
+        <div class="flex-1 flex flex-col overflow-y-auto">
+            
+            <!-- TOP BAR / HEADER -->
+            <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 sticky top-0 z-10">
+                <div class="flex items-center gap-4">
+                    <button class="md:hidden text-slate-600 hover:text-slate-900">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                    <h1 class="text-xl font-bold text-slate-800">Ringkasan Risiko Perusahaan</h1>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <button class="relative p-2 text-slate-500 hover:text-slate-800 transition">
+                        <i class="fa-solid fa-bell text-lg"></i>
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-rose-500 rounded-full"></span>
+                    </button>
+                    <div class="h-8 w-px bg-slate-200"></div>
+                    <span class="text-sm font-medium text-slate-600 hidden sm:inline">Divisi Manajemen Risiko</span>
+                </div>
+            </header>
 
+            <!-- DASHBOARD CONTENT -->
+            <main class="p-6 space-y-6 max-w-7xl w-full mx-auto">
+                
+                <!-- BANNER SELAMAT DATANG -->
+                <div class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-6 text-white shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-1">Selamat Datang di Risk Track System</h2>
+                        <p class="text-slate-300 text-sm">Pantau, analisis, dan mitigasi risiko operasional divisi Anda secara real-time.</p>
+                    </div>
+                    <button class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow-lg shadow-emerald-900/20">
+                        <i class="fa-solid fa-plus"></i> Identifikasi Risiko Baru
+                    </button>
+                </div>
+
+                <!-- KARTU STATISTIK (KPI CARDS) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Total Risiko -->
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Total Risiko</p>
+                            <h3 class="text-3xl font-bold mt-1 text-slate-900">42</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Risiko Tinggi / Kritis -->
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Risiko Tinggi</p>
+                            <h3 class="text-3xl font-bold mt-1 text-rose-600">8</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                    </div>
+
+                    <!-- Dalam Mitigasi -->
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Dalam Mitigasi</p>
+                            <h3 class="text-3xl font-bold mt-1 text-amber-600">18</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-spinner-third animate-spin" style="animation-duration: 3s;"></i>
+                        </div>
+                    </div>
+
+                    <!-- Risiko Selesai -->
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Terselesaikan</p>
+                            <h3 class="text-3xl font-bold mt-1 text-emerald-600">16</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MATRIKS RISIKO & LOG UTAMA -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Tabel / List Risiko Terbaru -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-xs lg:col-span-2 flex flex-col">
+                        <div class="p-5 border-b border-slate-100 flex justify-between items-center">
+                            <h4 class="font-bold text-slate-900">Risiko Perlu Perhatian Khusus</h4>
+                            <a href="#" class="text-xs font-semibold text-emerald-600 hover:text-emerald-700">Lihat Semua <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        </div>
+                        <div class="overflow-x-auto flex-1">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-slate-50 text-xs font-semibold text-slate-500 uppercase border-b border-slate-100">
+                                        <th class="px-6 py-3.5">ID / Risiko</th>
+                                        <th class="px-6 py-3.5">Divisi / Unit</th>
+                                        <th class="px-6 py-3.5">Level Dampak</th>
+                                        <th class="px-6 py-3.5">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 text-sm">
+                                    <tr>
+                                        <td class="px-6 py-4">
+                                            <span class="font-semibold text-xs text-slate-400 block">RSK-092</span>
+                                            <span class="text-slate-800 font-medium">Keterlambatan Penagihan Rekening</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-slate-600 font-medium">Divisi TRA</td>
+                                        <td class="px-6 py-4">
+                                            <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-rose-100 text-rose-700 border border-rose-200">Kritis (Ekstrim)</span>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span class="flex items-center gap-1.5 text-amber-600 font-medium text-xs"><i class="fa-solid fa-circle text-[8px] animate-pulse"></i> Review Mitigasi</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4">
+                                            <span class="font-semibold text-xs text-slate-400 block">RSK-088</span>
+                                            <span class="text-slate-800 font-medium">Kerusakan Pompa Distribusi Utama</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-slate-600 font-medium">Unit Lawe-Lawe</td>
+                                        <td class="px-6 py-4">
+                                            <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-amber-100 text-amber-700 border border-amber-200">Tinggi</span>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span class="flex items-center gap-1.5 text-amber-600 font-medium text-xs"><i class="fa-solid fa-circle text-[8px] animate-pulse"></i> Open</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4">
+                                            <span class="font-semibold text-xs text-slate-400 block">RSK-085</span>
+                                            <span class="text-slate-800 font-medium">Sinkronisasi Log File Gagal</span>
+                                        </td>
+                                        <td class="px-6 py-4 text-slate-600 font-medium">Divisi Umum (IT)</td>
+                                        <td class="px-6 py-4">
+                                            <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-yellow-100 text-yellow-800 border border-yellow-200">Sedang</span>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <span class="flex items-center gap-1.5 text-emerald-600 font-medium text-xs"><i class="fa-solid fa-circle-check"></i> Selesai</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Log Aktivitas Terakhir (Audit Trail) -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-xs p-5 flex flex-col">
+                        <div class="mb-4">
+                            <h4 class="font-bold text-slate-900">Log Aktivitas Terbaru</h4>
+                            <p class="text-xs text-slate-400">Riwayat perubahan data oleh sistem & user</p>
+                        </div>
+                        
+                        <!-- Timeline -->
+                        <div class="space-y-4 flex-1 overflow-y-auto pr-1">
+                            <div class="flex gap-3 text-sm">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-6 h-6 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xs ring-4 ring-blue-50/50">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </div>
+                                    <div class="w-0.5 h-full bg-slate-100 mt-2"></div>
+                                </div>
+                                <div class="pb-2">
+                                    <p class="text-slate-700"><span class="font-semibold text-slate-900">User TRA_Admin</span> mengubah target waktu mitigasi pada <span class="font-medium text-slate-900">RSK-092</span></p>
+                                    <span class="text-xs text-slate-400 font-medium block mt-0.5">Baru saja</span>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 text-sm">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-xs ring-4 ring-emerald-50/50">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <div class="w-0.5 h-full bg-slate-100 mt-2"></div>
+                                </div>
+                                <div class="pb-2">
+                                    <p class="text-slate-700"><span class="font-semibold text-slate-900">Sistem</span> berhasil menambahkan risiko baru dari <span class="font-medium text-slate-900">Unit Lawe-Lawe</span></p>
+                                    <span class="text-xs text-slate-400 font-medium block mt-0.5">2 jam yang lalu</span>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 text-sm">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-6 h-6 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-xs ring-4 ring-amber-50/50">
+                                        <i class="fa-solid fa-user-shield"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-slate-700"><span class="font-semibold text-slate-900">Superadmin</span> memperbarui hak akses untuk 3 user staf</p>
+                                    <span class="text-xs text-slate-400 font-medium block mt-0.5">Kemarin, 14:20</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+            
+            <!-- FOOTER -->
+            <footer class="mt-auto py-4 px-6 border-t border-slate-200 text-center text-xs text-slate-400 bg-white">
+                &copy; 2026 Risk Track System — Danumtaka Enterprise Solutions. All rights reserved.
+            </footer>
+        </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Perumda Air Minum Danum Taka - Sistem Manajemen Risiko (SPI)</p>
-    </footer>
 
 </body>
 </html>
