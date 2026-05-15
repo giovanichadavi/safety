@@ -3,244 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manajemen Risiko | Perumda Air Minum Danum Taka</title>
+    <title>Safety Danum Taka | Manajemen Risiko</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0056b3;
-            --secondary: #00a8e8;
-            --dark: #1a1a1a;
-            --light: #f4f7f6;
-            --white: #ffffff;
-            --danger: #dc3545;
-            --warning: #fd7e14;
+            --primary: #007bff;
             --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --info: #17a2b8;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --white: #ffffff;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #f0f2f5; color: #333; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--white);
-        }
-
-        /* Hero Section */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        p.subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: 0.3s;
-            margin: 10px;
-        }
-
-        .btn-light { background: var(--white); color: var(--primary); }
-        .btn-light:hover { background: #e2e2e2; }
-        .btn-outline { border: 2px solid var(--white); color: var(--white); }
-        .btn-outline:hover { background: rgba(255,255,255,0.1); }
-
-        /* Section Styling */
-        section { padding: 80px 0; }
-        .bg-light { background-color: var(--light); }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2rem;
-            color: var(--primary);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background: var(--secondary);
-            margin: 10px auto;
-        }
-
-        /* Grid System */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
+        /* Navbar Modern */
+        nav {
             background: var(--white);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .card:hover { transform: translateY(-5px); }
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo-container img { height: 45px; border-radius: 4px; }
+        .logo-text { font-weight: 700; color: var(--dark); line-height: 1.2; font-size: 0.9rem; }
 
-        /* Table Styling */
-        .table-responsive {
-            overflow-x: auto;
-            margin-top: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 18px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        th { background-color: var(--primary); color: var(--white); }
-
-        .badge {
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
+        .nav-links { display: flex; align-items: center; gap: 20px; }
+        .btn-login {
+            background: var(--primary);
             color: white;
-            text-transform: uppercase;
+            padding: 8px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
-        .high { background-color: var(--danger); }
-        .medium { background-color: var(--warning); }
-        .low { background-color: var(--success); }
+        .btn-login:hover { background: #0056b3; }
 
-        /* Footer */
-        footer {
-            background: #111;
-            color: #ccc;
-            text-align: center;
-            padding: 50px 20px;
+        .main-content { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .welcome-text { margin-bottom: 25px; font-weight: 700; font-size: 1.4rem; color: #444; }
+
+        /* Dashboard Stats */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
-        footer strong { color: var(--white); }
+        .stat-card {
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            position: relative;
+            min-height: 120px;
+        }
+        .stat-card h2 { font-size: 2.2rem; margin-bottom: 5px; }
+        .stat-card p { font-size: 0.9rem; opacity: 0.9; }
+        .stat-card .footer-link {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: rgba(0,0,0,0.1); padding: 5px 15px;
+            font-size: 0.75rem; text-decoration: none; color: white;
+            text-align: right; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
+        }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8rem; }
-            section { padding: 50px 0; }
+        .blue { background-color: #5bc0de; }
+        .green { background-color: #5cb85c; }
+        .red { background-color: #d9534f; }
+        .yellow { background-color: #f0ad4e; }
+
+        /* Charts Section */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .chart-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .chart-card h4 { margin-bottom: 20px; font-size: 1rem; color: #666; display: flex; align-items: center; gap: 10px; }
+
+        /* Matrix Table */
+        .matrix-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .matrix-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.75rem; text-align: center; }
+        .matrix-table th { padding: 10px; background: #f8f9fa; border: 1px solid #ddd; }
+        .matrix-table td { padding: 12px; border: 1px solid #ddd; color: white; font-weight: bold; }
+
+        /* Matrix Colors */
+        .m-red { background: #ff4d4d; }
+        .m-orange { background: #ffa64d; }
+        .m-yellow { background: #ffff4d; color: #333 !important; }
+        .m-green { background: #4dff4d; color: #333 !important; }
+
+        @media (max-width: 992px) {
+            .chart-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Sistem Manajemen Risiko</h1>
-            <p class="subtitle">Perumda Air Mimun Danum Taka - Kabupaten Penajam Paser Utara</p>
-            <div class="btn-group">
-                <a href="#mitigasi" class="btn btn-light">Lihat Daftar Risiko</a>
-                <a href="#kontak" class="btn btn-outline">Hubungi Pengawas</a>
+    <nav>
+        <div class="logo-container">
+            <img src="logo.jpeg" alt="Logo Danum Taka">
+            <div class="logo-text">
+                PERUMDA AIR MINUM<br>DANUM TAKA
             </div>
         </div>
-    </header>
+        <div class="nav-links">
+            <a href="#" class="btn-login">LOG IN</a>
+        </div>
+    </nav>
 
-    <section id="komitmen" class="container">
-        <h2 class="section-title">Prioritas Strategis</h2>
-        <div class="features">
-            <div class="card">
-                <h3 style="color: var(--primary); margin-bottom: 15px;">Ketahanan Infrastruktur</h3>
-                <p>Memastikan sistem perpipaan dan distribusi terlindungi dari risiko teknis untuk pelayanan 24 jam.</p>
+    <div class="main-content">
+        <h1 class="welcome-text">Selamat Datang Di Safety Danum Taka</h1>
+
+        <div class="stat-grid">
+            <div class="stat-card blue">
+                <h2>71</h2>
+                <p>Total Risiko Terlapor</p>
+                <a href="#" class="footer-link">Lihat Semua →</a>
             </div>
-            <div class="card">
-                <h3 style="color: var(--primary); margin-bottom: 15px;">Proteksi Sumber Air</h3>
-                <p>Mitigasi risiko lingkungan pada waduk dan sungai sebagai sumber air baku utama Danum Taka.</p>
+            <div class="stat-card green">
+                <h2>23</h2>
+                <p>Sudah Ditindaklanjuti</p>
+                <a href="#" class="footer-link">Lihat Detail →</a>
             </div>
-            <div class="card">
-                <h3 style="color: var(--primary); margin-bottom: 15px;">Akuntabilitas Publik</h3>
-                <p>Mencegah risiko kecurangan (fraud) dan meningkatkan transparansi tata kelola perusahaan.</p>
+            <div class="stat-card red">
+                <h2>48</h2>
+                <p>Baru</p>
+                <a href="#" class="footer-link">Lihat Detail →</a>
+            </div>
+            <div class="stat-card yellow">
+                <h2>19</h2>
+                <p>Total Unit/Divisi</p>
+                <a href="#" class="footer-link">Lihat Detail →</a>
             </div>
         </div>
-    </section>
 
-    <section id="mitigasi" class="bg-light">
-        <div class="container">
-            <h2 class="section-title">Matriks Risiko & Mitigasi</h2>
-            <div class="table-responsive">
-                <table>
+        <div class="chart-grid">
+            <div class="chart-card">
+                <h4>📊 Sebaran Risiko Per Unit</h4>
+                <div style="height: 250px; background: #fcfcfc; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center; color: #999;">
+                    [ Grafik Batang Sebaran Unit ]
+                </div>
+            </div>
+            <div class="chart-card">
+                <h4>⭕ Status Tindak Lanjut</h4>
+                <div style="height: 250px; background: #fcfcfc; border: 1px dashed #ddd; display: flex; align-items: center; justify-content: center; color: #999;">
+                    [ Donut Chart Status ]
+                </div>
+            </div>
+        </div>
+
+        <div class="matrix-container">
+            <h3 style="text-align: center; margin-bottom: 20px;">📊 Matriks Penilaian Risiko</h3>
+            <div style="overflow-x: auto;">
+                <table class="matrix-table">
                     <thead>
                         <tr>
-                            <th>Kategori Risiko</th>
-                            <th>Deskripsi Risiko</th>
-                            <th>Tingkat</th>
-                            <th>Tindakan Mitigasi</th>
+                            <th rowspan="2">Dampak / Peluang</th>
+                            <th>Jarang</th>
+                            <th>Kecil</th>
+                            <th>Sedang</th>
+                            <th>Besar</th>
+                            <th>Pasti</th>
+                        </tr>
+                        <tr>
+                            <th>(1)</th>
+                            <th>(2)</th>
+                            <th>(3)</th>
+                            <th>(4)</th>
+                            <th>(5)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Operasional</td>
-                            <td>Kebocoran Pipa Utama (NRW)</td>
-                            <td><span class="badge high">Tinggi</span></td>
-                            <td>Sensor tekanan digital & perbaikan pipa cepat.</td>
+                            <td>Dahsyat (5)</td>
+                            <td class="m-red">9<br>Ekstrim</td>
+                            <td class="m-red">15<br>Ekstrim</td>
+                            <td class="m-red">18<br>Ekstrim</td>
+                            <td class="m-red">23<br>Ekstrim</td>
+                            <td class="m-red">25<br>Ekstrim</td>
                         </tr>
                         <tr>
-                            <td>Lingkungan</td>
-                            <td>Kekeringan Sumber Air Baku</td>
-                            <td><span class="badge high">Tinggi</span></td>
-                            <td>Pembangunan embung cadangan & pompanisasi.</td>
+                            <td>Besar (4)</td>
+                            <td class="m-orange">6<br>Tinggi</td>
+                            <td class="m-orange">12<br>Tinggi</td>
+                            <td class="m-orange">16<br>Tinggi</td>
+                            <td class="m-red">19<br>Ekstrim</td>
+                            <td class="m-red">24<br>Ekstrim</td>
                         </tr>
                         <tr>
-                            <td>Finansial</td>
-                            <td>Piutang Rekening Air Pelanggan</td>
-                            <td><span class="badge medium">Sedang</span></td>
-                            <td>Digitalisasi tagihan & skema cicilan tunggakan.</td>
+                            <td>Menengah (3)</td>
+                            <td class="m-yellow">4<br>Moderat</td>
+                            <td class="m-yellow">10<br>Moderat</td>
+                            <td class="m-orange">14<br>Tinggi</td>
+                            <td class="m-orange">17<br>Tinggi</td>
+                            <td class="m-red">22<br>Ekstrim</td>
                         </tr>
                         <tr>
-                            <td>SDM</td>
-                            <td>Kecelakaan Kerja Lapangan</td>
-                            <td><span class="badge low">Rendah</span></td>
-                            <td>Penerapan K3 ketat & asuransi ketenagakerjaan.</td>
+                            <td>Rendah (2)</td>
+                            <td class="m-green">2<br>Rendah</td>
+                            <td class="m-green">7<br>Rendah</td>
+                            <td class="m-yellow">11<br>Moderat</td>
+                            <td class="m-yellow">13<br>Moderat</td>
+                            <td class="m-orange">21<br>Tinggi</td>
+                        </tr>
+                        <tr>
+                            <td>Tidak Signifikan (1)</td>
+                            <td class="m-green">1<br>Rendah</td>
+                            <td class="m-green">3<br>Rendah</td>
+                            <td class="m-green">5<br>Rendah</td>
+                            <td class="m-green">8<br>Rendah</td>
+                            <td class="m-yellow">13<br>Moderat</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="kontak" class="container" style="text-align: center;">
-        <h2 class="section-title">Layanan Pengaduan</h2>
-        <p style="margin-bottom: 30px; font-size: 1.1rem;">Bantu kami memitigasi risiko lebih awal dengan melaporkan setiap temuan atau gangguan.</p>
-        <div style="background: var(--light); padding: 40px; border-radius: 12px; display: inline-block; min-width: 300px;">
-            <p><strong>Whistleblowing System:</strong> wbs@danumtaka.co.id</p>
-            <p><strong>WhatsApp Pengaduan:</strong> 0812-XXXX-XXXX</p>
-            <p><strong>Alamat:</strong> Jl. Provinsi KM. 09, Penajam Paser Utara</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 <strong>Perumda Air Minum Danum Taka</strong>. Hak Cipta Dilindungi.</p>
-            <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">Portal Transparansi Manajemen Risiko - Divisi SPI</p>
-        </div>
+    <footer style="text-align: center; padding: 40px; color: #888; font-size: 0.8rem;">
+        &copy; 2024 Perumda Air Minum Danum Taka. Safety Management System.
     </footer>
 
 </body>
